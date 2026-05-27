@@ -16,7 +16,7 @@ public class Player {
     }
 
     public Byte getHandicap() {
-        return handicap;
+        return this.handicap;
     }
 
     public void setPuntos_Stableford(int puntos_Stableford) {
@@ -28,17 +28,19 @@ public class Player {
     }
 
     public int getScore() {
-        return score;
+        return this.score;
     }
 
     public int getPuntos_Stableford() {
-        return puntos_Stableford;
+        return this.puntos_Stableford;
     }
 
     @Override
     public String toString() {
         
-        return "Jugador: " + getInitials() + " " + "Handicap: " + getHandicap();
+        return this.getInitials() + " ---> H'cap: " + this.getHandicap() + "\t" 
+               + " Strokes: " + this.getScore() + "\t"
+               + " Stableford points: " + this.getPuntos_Stableford(); 
     }
 
 }
