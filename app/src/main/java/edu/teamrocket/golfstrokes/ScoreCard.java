@@ -11,7 +11,7 @@ public class ScoreCard {
     private Optional<Player> playerC = Optional.empty();
     private Optional<Player> playerD = Optional.empty();
 
-    
+    private List<Hole> holes = new ArrayList<>();
 
     private Course playersCourse;
 
@@ -73,6 +73,22 @@ public class ScoreCard {
         }
 
         return presentPlayers;
+    }
+
+    public void addHoles(Byte[] holesInput) {
+        byte holeNum = 1;
+        for (Byte hole : holesInput) {
+            this.holes.add(new Hole(holeNum++, hole));
+        }
+    }
+
+    public List<Hole> getHoles() {
+        return this.holes;
+    }
+
+    public byte getNumHoles() {
+        return (byte) this.holes.size();
+
     }
 
     
